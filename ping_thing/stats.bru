@@ -1,0 +1,24 @@
+meta {
+  name: ping-thing stats
+  type: http
+  seq: 53
+  tags: [read]
+}
+
+get {
+  url: {{base_url}}/ping-thing-stats/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  interval: 1
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

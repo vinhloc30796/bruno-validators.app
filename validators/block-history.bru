@@ -1,0 +1,24 @@
+meta {
+  name: validator block history
+  type: http
+  seq: 12
+  tags: [validators]
+}
+
+get {
+  url: {{base_url}}/validator-block-history/{{network}}/:account{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  account: 12345j84ecQEKUvQ7gYMKxKwKF6PbYXxXxxXXXXXxXXX
+}
+
+params:query {
+  limit: 100
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

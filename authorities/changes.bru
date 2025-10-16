@@ -1,0 +1,25 @@
+meta {
+  name: account authorities changes
+  type: http
+  seq: 80
+  tags: [authorities]
+}
+
+get {
+  url: {{base_url}}/account-authorities/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  per: 50
+  page: 1
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

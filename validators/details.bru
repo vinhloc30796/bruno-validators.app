@@ -1,0 +1,24 @@
+meta {
+  name: validator details
+  type: http
+  seq: 11
+  tags: [validators]
+}
+
+get {
+  url: {{base_url}}/validators/{{network}}/:account{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  account: 12345j84ecQEKUvQ7gYMKxKwKF6PbYXxXxxXXXXXxXXX
+}
+
+params:query {
+  with_history: true
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

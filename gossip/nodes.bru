@@ -1,0 +1,25 @@
+meta {
+  name: gossip nodes
+  type: http
+  seq: 70
+  tags: [gossip]
+}
+
+get {
+  url: {{base_url}}/gossip-nodes/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  staked: true
+  per: 50
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

@@ -1,0 +1,39 @@
+meta {
+  name: ping-thing batch
+  type: http
+  seq: 51
+  tags: [write]
+}
+
+post {
+  url: {{base_url}}/ping-thing-batch/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}
+
+
+body {
+  {
+    "transactions": [
+      {
+        "time": 396,
+        "signature": "0123456789",
+        "transaction_type": "transfer",
+        "slot_sent": 120,
+        "slot_landed": 123,
+        "reported_at": "2025-01-01T00:00:00",
+        "priority_fee_micro_lamports": 1000,
+        "priority_fee_percentile": 90,
+        "pinger_region": "nyc"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+auth {
+  mode: apikey
+}
+
+auth:apikey {
+  key: Token
+  value: {{api_token}}
+  placement: header
+}
+
+docs {
+  Our API provides several different endpoints to query the validators database. You must have a verified account in order to make requests against the JSON API. Your user account and an API token are used to secure this API. You can create a [New Account](https://www.validators.app/users/sign_up?locale=en&network=mainnet) or [Sign In](https://www.validators.app/users/sign_in?locale=en&network=mainnet) to see your API token.
+}

@@ -1,0 +1,8 @@
+{
+  "version": "1",
+  "type": "collection",
+  "name": "validators.app api",
+  "flags": {
+    "scriptMode": "js"
+  }
+}

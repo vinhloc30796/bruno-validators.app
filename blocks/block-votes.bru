@@ -1,0 +1,24 @@
+meta {
+  name: block votes
+  type: http
+  seq: 91
+  tags: [blocks]
+}
+
+get {
+  url: {{base_url}}/block-votes/{{network}}/:block_hash{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  block_hash: DN8iqbSo1BLxJBSRZSyTE1DjeA1GpJowmmQk4WPCJnLF
+}
+
+params:query {
+  limit: 50
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

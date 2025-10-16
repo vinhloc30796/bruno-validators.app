@@ -1,0 +1,25 @@
+meta {
+  name: yellowstone policies
+  type: http
+  seq: 100
+  tags: [yellowstone]
+}
+
+get {
+  url: {{base_url}}/policies/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  limit: 25
+  page: 1
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

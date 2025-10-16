@@ -1,0 +1,24 @@
+meta {
+  name: commission changes
+  type: http
+  seq: 30
+  tags: [commission]
+}
+
+get {
+  url: {{base_url}}/commission-changes/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  per: 25
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

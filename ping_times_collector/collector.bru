@@ -1,0 +1,41 @@
+meta {
+  name: ping times collector
+  type: http
+  seq: 40
+  tags: [write]
+}
+
+post {
+  url: {{base_url}}/collector
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}
+
+body {
+  {
+    "payload_type": "ping_times",
+    "payload_version": 1,
+    "payload": [
+      {
+        "network": "testnet",
+        "from_account": "ABCD",
+        "from_ip": "123.123.123.123",
+        "to_account": "IJKL",
+        "to_ip": "10.10.10.10",
+        "min_ms": 1.881,
+        "avg_ms": 2.238,
+        "max_ms": 3.428,
+        "mdev": 1.597
+      }
+    ]
+  }
+}
+
+assert {
+  res.body.status: eq Accepted
+}
+
+

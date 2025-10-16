@@ -1,0 +1,20 @@
+meta {
+  name: yellowstone policy details
+  type: http
+  seq: 101
+  tags: [yellowstone]
+}
+
+get {
+  url: {{base_url}}/policies/{{network}}/:pubkey{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  pubkey: 9M69sfTJHjTDY62crfDTWrezoTWvSxg1jdeLXSufZHty
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

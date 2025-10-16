@@ -1,0 +1,20 @@
+meta {
+  name: stake pools
+  type: http
+  seq: 40
+  tags: [stake]
+}
+
+get {
+  url: {{base_url}}/stake-pools/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

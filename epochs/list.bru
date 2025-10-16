@@ -1,0 +1,25 @@
+meta {
+  name: epochs list
+  type: http
+  seq: 20
+  tags: [epochs]
+}
+
+get {
+  url: {{base_url}}/epochs/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  per: 50
+  page: 1
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

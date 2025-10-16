@@ -1,0 +1,26 @@
+meta {
+  name: validators list
+  type: http
+  seq: 10
+  tags: [validators]
+}
+
+get {
+  url: {{base_url}}/validators/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  order: score
+  limit: 50
+  active_only: true
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

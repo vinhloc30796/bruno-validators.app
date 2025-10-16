@@ -1,0 +1,24 @@
+meta {
+  name: ping-time-stats
+  type: http
+  seq: 3
+  tags: [read]
+}
+
+get {
+  url: {{base_url}}/ping-time-stats/{{network}}{{filetype}}
+}
+
+params:path {
+  network: {{network}}
+  filetype: {{filetype}}
+}
+
+params:query {
+  limit: 50
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

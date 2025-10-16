@@ -1,0 +1,20 @@
+meta {
+  name: stake explorer by vote account
+  type: http
+  seq: 41
+  tags: [stake]
+}
+
+get {
+  url: {{base_url}}/stake-explorer/mainnet{{filetype}}
+}
+
+params:query {
+  vote_account: 6559KMdiUseNSAkRcK9WcFcNTppoj6jWtKVedpMkBYCn
+  per: 25
+}
+
+headers {
+  Token: {{process.env.API_TOKEN}}
+  Content-Type: application/json
+}

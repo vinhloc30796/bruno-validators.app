@@ -1,0 +1,16 @@
+meta {
+  name: sol prices
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/sol-prices{{filetype}}?from=2022-01-01T00:00:00
+  body: none
+  auth: inherit
+}
+
+params:query {
+  from: 2022-01-01T00:00:00
+  ~to: 2022-01-01T00:00:00
+}
